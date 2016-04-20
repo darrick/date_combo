@@ -1,0 +1,85 @@
+# Schema for the configuration files of the Date Combo module.
+
+field.storage_settings.date_combo:
+  type: mapping
+  label: 'Date Combo settings'
+  mapping:
+    datetime_type:
+      type: string
+      label: 'Date Combo type'
+
+field.field_settings.date_combo:
+  type: mapping
+  label: 'Date Combo settings'
+
+field.value.date_combo:
+  type: mapping
+  label: 'Default value'
+  mapping:
+    default_date_type:
+      type: string
+      label: 'Default date_combo type'
+    default_date:
+      type: string
+      label: 'Default date_combo value'
+
+field.formatter.settings.date_combo_base:
+  type: mapping
+  mapping:
+    timezone_override:
+      type: string
+      label: 'Time zone override'
+
+field.formatter.settings.date_combo_default:
+  type: field.formatter.settings.date_combo_base
+  label: 'Date Combo default display format settings'
+  mapping:
+    format_type:
+      type: string
+      label: 'Date Combo format'
+
+field.formatter.settings.date_combo_plain:
+  type: field.formatter.settings.date_combo_base
+  label: 'Date Combo plain display format settings'
+
+field.formatter.settings.date_combo_custom:
+  type: field.formatter.settings.date_combo_base
+  label: 'Date Combo custom display format settings'
+  mapping:
+    date_format:
+      type: string
+      label: 'Date/time format'
+      translatable: true
+      translation context: 'PHP date format'
+
+field.formatter.settings.date_combo_time_ago:
+  type: mapping
+  label: 'Date Combo time ago display format settings'
+  mapping:
+    future_format:
+      type: string
+      label: 'Future format'
+    past_format:
+      type: string
+      label: 'Past format'
+    granularity:
+      type: integer
+      label: 'Granularity'
+
+field.widget.settings.date_combo_datelist:
+  type: mapping
+  label: 'Date Combo select list display format settings'
+  mapping:
+    increment:
+      type: integer
+      label: 'Time increments'
+    date_order:
+      type: string
+      label: 'Date part order'
+    time_type:
+      type: string
+      label: 'Time type'
+
+field.widget.settings.date_combo_default:
+  type: mapping
+  label: 'Date Combo default display format settings'
